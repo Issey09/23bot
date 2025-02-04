@@ -106,7 +106,7 @@ async def get_days(callback_query: types.CallbackQuery):
         return
 
     # Формируем текст расписания
-    text = "\n".join([f"{lesson[0]}: {lesson[1]} (Кабинет: {lesson[2]})" for lesson in lessons])
+    text = "\n".join([f"{lesson[0]} - {lesson[1]} (каб. {lesson[2]})" for lesson in lessons])
     await callback_query.message.edit_text(text, reply_markup=inline_kb)
     await callback_query.answer()
 
